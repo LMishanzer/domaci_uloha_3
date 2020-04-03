@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="domaci_uloha_3" targetName="domaci_uloha_3" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="206631e2-b682-4bdc-9711-97851bc2ecf7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1ZfdzdMyta8saMirybBaqhEHkzR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="domaci_uloha_3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="domaci_uloha_3" TARGET_NAME="domaci_uloha_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="domaci_uloha_3" RUN_TARGET_NAME="domaci_uloha_3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="206631e2-b682-4bdc-9711-97851bc2ecf7" name="Default Changelist" comment="" />
+      <created>1585234345752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585234345752</updated>
+      <workItem from="1585234347396" duration="18288000" />
+      <workItem from="1585303385451" duration="106000" />
+      <workItem from="1585339643570" duration="53000" />
+      <workItem from="1585410114912" duration="910000" />
+      <workItem from="1585578808436" duration="10875000" />
+      <workItem from="1585591625109" duration="8276000" />
+      <workItem from="1585762375629" duration="594000" />
+      <workItem from="1585822133639" duration="14506000" />
+      <workItem from="1585857008249" duration="9081000" />
+      <workItem from="1585928238717" duration="6067000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="694" y="253" key="FileChooserDialogImpl" timestamp="1585411173299">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="694" y="253" key="FileChooserDialogImpl/0.28.1920.1052@0.28.1920.1052" timestamp="1585411173299" />
+    <state x="333" y="100" key="SettingsEditor" timestamp="1585410956409">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="333" y="100" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1585410956409" />
+    <state x="539" y="249" key="run.anything.popup" timestamp="1585581195041">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="539" y="249" key="run.anything.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1585581195041" />
+  </component>
+</project>
