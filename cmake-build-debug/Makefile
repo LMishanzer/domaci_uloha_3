@@ -204,6 +204,33 @@ test.cpp.s:
 	$(MAKE) -f CMakeFiles/domaci_uloha_3.dir/build.make CMakeFiles/domaci_uloha_3.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+test1.o: test1.cpp.o
+
+.PHONY : test1.o
+
+# target to build an object file
+test1.cpp.o:
+	$(MAKE) -f CMakeFiles/domaci_uloha_3.dir/build.make CMakeFiles/domaci_uloha_3.dir/test1.cpp.o
+.PHONY : test1.cpp.o
+
+test1.i: test1.cpp.i
+
+.PHONY : test1.i
+
+# target to preprocess a source file
+test1.cpp.i:
+	$(MAKE) -f CMakeFiles/domaci_uloha_3.dir/build.make CMakeFiles/domaci_uloha_3.dir/test1.cpp.i
+.PHONY : test1.cpp.i
+
+test1.s: test1.cpp.s
+
+.PHONY : test1.s
+
+# target to generate assembly for a file
+test1.cpp.s:
+	$(MAKE) -f CMakeFiles/domaci_uloha_3.dir/build.make CMakeFiles/domaci_uloha_3.dir/test1.cpp.s
+.PHONY : test1.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... test1.o"
+	@echo "... test1.i"
+	@echo "... test1.s"
 .PHONY : help
 
 

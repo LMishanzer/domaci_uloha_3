@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/domaci_uloha_3.dir/main.cpp.o CMakeFiles/domaci_uloha_3.dir/CBigInt.cpp.o CMakeFiles/domaci_uloha_3.dir/test.cpp.o  -o domaci_uloha_3 
+/usr/bin/c++  -g   CMakeFiles/domaci_uloha_3.dir/main.cpp.o CMakeFiles/domaci_uloha_3.dir/CBigInt.cpp.o CMakeFiles/domaci_uloha_3.dir/test.cpp.o CMakeFiles/domaci_uloha_3.dir/test1.cpp.o  -o domaci_uloha_3 

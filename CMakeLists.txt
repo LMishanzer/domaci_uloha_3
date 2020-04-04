@@ -3,4 +3,4 @@ project(domaci_uloha_3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(domaci_uloha_3 main.cpp CBigInt.cpp test.cpp)
+add_executable(domaci_uloha_3 main.cpp CBigInt.cpp test.cpp test1.cpp)

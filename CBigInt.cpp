@@ -25,33 +25,34 @@ class CBigInt
 {
 public:
     CBigInt();
-    explicit CBigInt(const int &num);
+    explicit CBigInt(const long long &num);
     explicit CBigInt(const string &num);
     CBigInt(const CBigInt &num);
 
-    CBigInt & operator = (const int &num);
+    CBigInt & operator = (const long long &num);
     CBigInt & operator = (const string &num);
     CBigInt & operator = (const CBigInt &num);
-    CBigInt operator - ();
-    template <class T>
-    CBigInt & operator +=(const T &num);
-    template <class T>
-    CBigInt & operator*=(const T &num);
+    CBigInt operator - () const;
+
+    CBigInt & operator +=(const CBigInt &num);
+    CBigInt & operator +=(const long long &num);
+    CBigInt & operator +=(const string &num);
+
+    CBigInt & operator*=(const CBigInt &num);
+    CBigInt & operator*=(const long long &num);
+    CBigInt & operator*=(const string &num);
 
     friend ostringstream & operator<<(ostringstream & os, const CBigInt & num);
     friend ostream & operator<<(ostream & os, const CBigInt & num);
     friend bool AreEqual(const CBigInt & num1, const CBigInt & num2);
     friend bool IsGreater(const CBigInt & num1, const CBigInt & num2);
-    template <class T, class U>
-    friend CBigInt operator + (const T &num1, const U &num2);
-    template <class T, class U>
-    friend CBigInt operator - (const T &num1, const U &num2);
-    template <class T, class U>
-    friend CBigInt operator * (const T &num1, const U &num2);
 
-    // copying/assignment/destruction
-    // operator *, any combination {CBigInt/int/string} * {CBigInt/int/string}
-    // operator *=, any of {CBigInt/int/string}
+    friend CBigInt operator + (const CBigInt &num1, const CBigInt &num2);
+
+    friend CBigInt operator - (const CBigInt &num1, const CBigInt &num2);
+
+    friend CBigInt operator * (const CBigInt &num1, const CBigInt &num2);
+
 private:
     bool sign;
     unsigned long size;
@@ -129,7 +130,7 @@ CBigInt::CBigInt()
     size = 1;
 }
 
-CBigInt::CBigInt(const int &num)
+CBigInt::CBigInt(const long long &num)
 {
     sign = (num >= 0);
     if (sign)
@@ -175,7 +176,7 @@ CBigInt::CBigInt(const CBigInt &num)
         number += num.number[i];
 }
 
-CBigInt & CBigInt::operator=(const int & num)
+CBigInt & CBigInt::operator=(const long long & num)
 {
     num < 0 ? (sign = false) : (sign = true);
     number = to_string(num);
@@ -263,67 +264,165 @@ bool IsGreater(const CBigInt & num1, const CBigInt & num2)
         }
 }
 
-template <class T, class U>
-bool operator == (const T & num1, const U & num2)
+bool operator == (const CBigInt & num1, const CBigInt & num2)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    return AreEqual(temp1, temp2);
+    return AreEqual(num1, num2);
 }
-template <class T, class U>
-bool operator != (const T & num1, const U & num2)
+bool operator == (const CBigInt & num1, const long long & num2)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    return !AreEqual(temp1, temp2);
+    CBigInt temp(num2);
+    return AreEqual(num1, temp);
 }
-template <class T, class U>
-bool operator > (const T & num1, const U & num2)
+bool operator == (const CBigInt & num1, const string & num2)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    return IsGreater(temp1, temp2);
+    CBigInt temp(num2);
+    return AreEqual(num1, temp);
 }
-template <class T, class U>
-bool operator >= (const T & num1, const U & num2)
+bool operator == (const long long & num1, const CBigInt & num2)
+{
+    CBigInt temp(num1);
+    return AreEqual(temp, num2);
+}
+bool operator == (const string &num1, const CBigInt & num2)
+{
+    CBigInt temp(num1);
+    return AreEqual(temp, num2);
+}
+
+bool operator != (const CBigInt & num1, const CBigInt &num2)
+{
+    return !AreEqual(num1, num2);
+}
+bool operator != (const CBigInt & num1, const long long &num2)
+{
+    CBigInt temp(num2);
+    return !AreEqual(num1, temp);
+}
+bool operator != (const CBigInt & num1, const string &num2)
+{
+    CBigInt temp(num2);
+    return !AreEqual(num1, temp);
+}
+bool operator != (const long long & num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return !AreEqual(temp, num2);
+}
+bool operator != (const string & num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return !AreEqual(temp, num2);
+}
+
+bool operator > (const CBigInt & num1, const CBigInt & num2)
+{
+    return IsGreater(num1, num2);
+}
+bool operator > (const CBigInt & num1, const long long & num2)
+{
+    CBigInt temp(num2);
+    return IsGreater(num1, temp);
+}
+bool operator > (const CBigInt & num1, const string & num2)
+{
+    CBigInt temp(num2);
+    return IsGreater(num1, temp);
+}
+bool operator > (const long long & num1, const CBigInt & num2)
+{
+    CBigInt temp(num1);
+    return IsGreater(temp, num2);
+}
+bool operator > (const string & num1, const CBigInt & num2)
+{
+    CBigInt temp(num1);
+    return IsGreater(temp, num2);
+}
+
+bool operator >= (const CBigInt & num1, const CBigInt & num2)
 {
     return num1 > num2 || num1 == num2;
 }
-template <class T, class U>
-bool operator < (const T & num1, const U & num2)
+bool operator >= (const CBigInt & num1, const long long & num2)
+{
+    return num1 > num2 || num1 == num2;
+}
+bool operator >= (const CBigInt & num1, const string & num2)
+{
+    return num1 > num2 || num1 == num2;
+}
+bool operator >= (const long long & num1, const CBigInt & num2)
+{
+    return num1 > num2 || num1 == num2;
+}
+bool operator >= (const string & num1, const CBigInt & num2)
+{
+    return num1 > num2 || num1 == num2;
+}
+
+bool operator < (const CBigInt & num1, const CBigInt & num2)
 {
     return !(num1 >= num2);
 }
-template <class T, class U>
-bool operator <= (const T & num1, const U & num2)
+bool operator < (const CBigInt & num1, const long long & num2)
+{
+    return !(num1 >= num2);
+}
+bool operator < (const CBigInt & num1, const string & num2)
+{
+    return !(num1 >= num2);
+}
+bool operator < (const long long & num1, const CBigInt & num2)
+{
+    return !(num1 >= num2);
+}
+bool operator < (const string & num1, const CBigInt & num2)
+{
+    return !(num1 >= num2);
+}
+
+bool operator <= (const CBigInt & num1, const CBigInt & num2)
+{
+    return !(num1 > num2);
+}
+bool operator <= (const CBigInt & num1, const long long & num2)
+{
+    return !(num1 > num2);
+}
+bool operator <= (const CBigInt & num1, const string & num2)
+{
+    return !(num1 > num2);
+}
+bool operator <= (const long long & num1, const CBigInt & num2)
+{
+    return !(num1 > num2);
+}
+bool operator <= (const string & num1, const CBigInt & num2)
 {
     return !(num1 > num2);
 }
 
-template <class T, class U>
-CBigInt operator + (const T &num1, const U &num2)
+CBigInt operator + (const CBigInt &num1, const CBigInt &num2)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    if (temp1.sign && !temp2.sign)
-        return temp1 - (-temp2);
-    if (!temp1.sign && temp2.sign)
-        return temp2 - (-temp1);
-    if (!temp1.sign && !temp2.sign)
-        return -((-temp2) + (-temp1));
+    if (num1.sign && !num2.sign)
+        return num1 - (-num2);
+    if (!num1.sign && num2.sign)
+        return num2 - (-num1);
+    if (!num1.sign && !num2.sign)
+        return -((-num2) + (-num1));
 
-    if (temp2.size > temp1.size)
-        return temp2 + temp1;
+    if (num2.size > num1.size)
+        return num2 + num1;
 
     string reversed_result;
     bool transmission = false;
-    for (unsigned long i = 0; i < temp1.size; i++)
+    for (unsigned long i = 0; i < num1.size; i++)
     {
         int temp;
-        if (temp2.size - 1 >= i)
-            temp = temp1.number[temp1.size - 1 - i] + temp2.number[temp2.size - 1 - i] - 96 + transmission;
+        if (num2.size - 1 >= i)
+            temp = num1.number[num1.size - 1 - i] + num2.number[num2.size - 1 - i] - 96 + transmission;
         else {
-            temp = temp1.number[temp1.size - 1 - i] - 48 + transmission;
+            temp = num1.number[num1.size - 1 - i] - 48 + transmission;
         }
 
         if (temp >= 10)
@@ -347,40 +446,57 @@ CBigInt operator + (const T &num1, const U &num2)
     }
     return CBigInt(result);
 }
+CBigInt operator + (const CBigInt &num1, const long long &num2)
+{
+    CBigInt temp(num2);
+    return num1 + temp;
+}
+CBigInt operator + (const CBigInt &num1, const string &num2)
+{
+    CBigInt temp(num2);
+    return num1 + temp;
+}
+CBigInt operator + (const long long &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp + num2;
+}
+CBigInt operator + (const string &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp + num2;
+}
 
-CBigInt CBigInt::operator - ()
+CBigInt CBigInt::operator - () const
 {
     CBigInt res(*this);
     res.sign = !res.sign;
     return res;
 }
 
-template <class T, class U>
-CBigInt operator - (const T &num1, const U &num2)
+CBigInt operator - (const CBigInt &num1, const CBigInt &num2)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    if (temp1 == temp2)
+    if (num1 == num2)
         return CBigInt();
-    if (temp1.sign && !temp2.sign)
-        return temp1 + (-temp2);
-    if (!temp1.sign && temp2.sign)
-        return -(-temp1 + temp2);
-    if (!temp1.sign && !temp2.sign)
-        return (-temp2) - (-temp1);
+    if (num1.sign && !num2.sign)
+        return num1 + (-num2);
+    if (!num1.sign && num2.sign)
+        return -(-num1 + num2);
+    if (!num1.sign && !num2.sign)
+        return (-num2) - (-num1);
 
-    if (temp2 > temp1)
-        return -(temp2 - temp1);
+    if (num2 > num1)
+        return -(num2 - num1);
 
     string reversed_result;
     bool transmission = false;
-    for (unsigned long i = 0; i < temp1.size; i++)
+    for (unsigned long i = 0; i < num1.size; i++)
     {
         int temp;
-        if (temp2.size - 1 >= i)
-            temp = temp1.number[temp1.size - 1 - i] - temp2.number[temp2.size - 1 - i] - transmission;
+        if (num2.size - 1 >= i)
+            temp = num1.number[num1.size - 1 - i] - num2.number[num2.size - 1 - i] - transmission;
         else
-            temp = temp1.number[temp1.size - 1 - i] - 48 - transmission;
+            temp = num1.number[num1.size - 1 - i] - 48 - transmission;
 
         if (temp < 0)
         {
@@ -401,30 +517,58 @@ CBigInt operator - (const T &num1, const U &num2)
     }
     return CBigInt(result);
 }
+CBigInt operator - (const CBigInt &num1, const long long &num2)
+{
+    CBigInt temp(num2);
+    return num1 + temp;
+}
+CBigInt operator - (const CBigInt &num1, const string &num2)
+{
+    CBigInt temp(num2);
+    return num1 + temp;
+}
+CBigInt operator - (const long long &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp + num2;
+}
+CBigInt operator - (const string &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp + num2;
+}
 
-template <class T>
-CBigInt & CBigInt::operator+=(const T &num)
+CBigInt & CBigInt::operator+=(const CBigInt &num)
 {
     *this = *this + num;
     return *this;
 }
-
-template <class T, class U>
-CBigInt operator * (const T &num1, const U &num2)
+CBigInt & CBigInt::operator+=(const long long &num)
 {
-    CBigInt temp1(num1);
-    CBigInt temp2(num2);
-    if (temp2.size > temp1.size)
-        return temp2 * temp1;
+    CBigInt temp(num);
+    *this = *this + temp;
+    return *this;
+}
+CBigInt & CBigInt::operator+=(const string &num)
+{
+    CBigInt temp(num);
+    *this = *this + temp;
+    return *this;
+}
 
-    auto * array = new CBigInt[temp2.size];
-    for (unsigned long i = 0; i < temp2.size; i++)
+CBigInt operator * (const CBigInt &num1, const CBigInt &num2)
+{
+    if (num2.size > num1.size)
+        return num2 * num1;
+
+    auto * array = new CBigInt[num2.size];
+    for (unsigned long i = 0; i < num2.size; i++)
     {
         int transmission = 0;
         string reversed_result;
-        for (unsigned long j = 0; j < temp1.size; j++)
+        for (unsigned long j = 0; j < num1.size; j++)
         {
-            int temp = (temp1.number[temp1.size - 1 - j] - 48) * (temp2.number[temp2.size - 1 - i] - 48) + transmission;
+            int temp = (num1.number[num1.size - 1 - j] - 48) * (num2.number[num2.size - 1 - i] - 48) + transmission;
             transmission = 0;
             while (temp >= 10)
             {
@@ -449,22 +593,53 @@ CBigInt operator * (const T &num1, const U &num2)
         array[i] = CBigInt(result);
     }
     CBigInt result;
-    for (unsigned long i = 0; i < temp2.size; i++)
+    for (unsigned long i = 0; i < num2.size; i++)
     {
         result += array[i];
     }
     if (result.number != "0")
-        result.sign = !(temp1.sign ^ temp2.sign);
+        result.sign = !(num1.sign ^ num2.sign);
     else
         result.sign = true;
     result.size = result.number.size();
     delete [] array;
     return result;
 }
+CBigInt operator * (const CBigInt &num1, const long long &num2)
+{
+    CBigInt temp(num2);
+    return num1 * temp;
+}
+CBigInt operator * (const CBigInt &num1, const string &num2)
+{
+    CBigInt temp(num2);
+    return num1 * temp;
+}
+CBigInt operator * (const long long &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp * num2;
+}
+CBigInt operator * (const string &num1, const CBigInt &num2)
+{
+    CBigInt temp(num1);
+    return temp * num2;
+}
 
-template <class T>
-CBigInt & CBigInt::operator*=(const T &num)
+CBigInt & CBigInt::operator*=(const CBigInt &num)
 {
     *this = *this * num;
+    return *this;
+}
+CBigInt & CBigInt::operator*=(const long long &num)
+{
+    CBigInt temp(num);
+    *this = *this * temp;
+    return *this;
+}
+CBigInt & CBigInt::operator*=(const string &num)
+{
+    CBigInt temp(num);
+    *this = *this * temp;
     return *this;
 }

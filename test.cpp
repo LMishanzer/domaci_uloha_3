@@ -37,7 +37,7 @@ public:
     CBigInt & operator*=(const T &num);
 
     friend ostringstream & operator<<(ostringstream & os, const CBigInt & num);
-    friend ostream & operator<<(ostream & os, const CBigInt & num);
+//    friend ostream & operator<<(ostream & os, const CBigInt & num);
 
     template <class T>
     bool operator == (const T &num) const;
@@ -85,11 +85,11 @@ ostringstream & operator<<(ostringstream & os, const CBigInt & num)
     os << (num.sign ? "" : "-") << num.number;
     return os;
 }
-ostream & operator<<(ostream & os, const CBigInt & num)
-{
-    os << (num.sign ? "" : "-") << num.number;
-    return os;
-}
+//ostream & operator<<(ostream & os, const CBigInt & num)
+//{
+//    os << (num.sign ? "" : "-") << num.number;
+//    return os;
+//}
 
 bool operator>>(istringstream & is, CBigInt & num)
 {

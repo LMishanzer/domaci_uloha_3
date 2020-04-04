@@ -27,18 +27,23 @@ static bool equal ( const CBigInt & x, const char * val )
 
 int main ()
 {
-//    istringstream is;
-//    is.clear();
-//    is.str("    -1-2fds34afdhkjsd");
+    istringstream iss;
+    iss.clear();
+    iss.str("    -1-2fds34afdhkjsd");
 //    for (int i = 0; i < 4; i++)
-//        cout << (char) is.get() << endl;
-//    CBigInt a, b;
-//    is >> a;
-//    is >> b;
-//    cout << a << endl;
-//    cout << b << endl;
-//    assert(AreEqual(a, "-1"));
-//    assert(AreEqual(b, "-2"));
+//        cout << (char) iss.get() << endl;
+    CBigInt x, y, z;
+    assert(iss >> x);
+    assert(iss >> y);
+    assert(!(iss >> z));
+    assert(iss.fail());
+
+    assert(equal(x, "-1"));
+    assert(equal(y, "-2"));
+
+    x = "0";
+    y = "-0";
+    assert(!(x > y));
 
 
 //    cout << boolalpha << IsNumber("1000") << endl;
@@ -185,6 +190,8 @@ int main ()
     assert ( a >= -2147483648 );
     assert ( ! ( a == -2147483648 ) );
     assert ( a != -2147483648 );
+    is.fail();
+    assert(!(is >> a));
 
     return 0;
 }

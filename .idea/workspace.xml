@@ -11,7 +11,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="206631e2-b682-4bdc-9711-97851bc2ecf7" name="Default Changelist" comment="" />
+    <list default="true" id="206631e2-b682-4bdc-9711-97851bc2ecf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CBigInt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CBigInt.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/domaci_uloha_3.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/domaci_uloha_3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/domaci_uloha_3.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test1.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +39,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZfdzdMyta8saMirybBaqhEHkzR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +51,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -59,7 +82,8 @@
       <workItem from="1585762375629" duration="594000" />
       <workItem from="1585822133639" duration="14506000" />
       <workItem from="1585857008249" duration="9081000" />
-      <workItem from="1585928238717" duration="6067000" />
+      <workItem from="1585928238717" duration="7789000" />
+      <workItem from="1585995873519" duration="7134000" />
     </task>
     <servers />
   </component>
@@ -75,9 +99,9 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="333" y="100" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1585410956409" />
-    <state x="539" y="249" key="run.anything.popup" timestamp="1585581195041">
+    <state x="539" y="249" key="run.anything.popup" timestamp="1585935286148">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="539" y="249" key="run.anything.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1585581195041" />
+    <state x="539" y="249" key="run.anything.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1585935286148" />
   </component>
 </project>
